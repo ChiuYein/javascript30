@@ -1,0 +1,37 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    background: url("./image/party.jpg") center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.7;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: box;
+}
+
+.keys {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* move the div to the middle of the screen */
+}
+
+.key {
+    text-align: center;
+    border: 0.2em solid;
+    border-radius: 0.5em;
+    padding: 2em;
+    margin: 0.5em;
+    font-size: 1rem;
+    width: 10rem;
+    color: white;
+}
+
+.sound {
+    display: block;
+    color:white;
+}
