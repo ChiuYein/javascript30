@@ -58,30 +58,25 @@
     <audio data-key="75" src="audio/tom.wav"></audio>
     <audio data-key="76" src="audio/tink.wav"></audio>
 
-    <!-- functionality -->
+    <!-- javascript -->
     <script>
-        window.addEventListener("keydown", function(e) {
+        function playSound(e) {
             const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
             const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
-            if (!audio) return //stop then function from running all together
+            if (!audio) return //stop the function from running all together
             audio.currentTime = 0; //rewind into start
             audio.play();
             key.classList.add("playing");
-        })
-
+        }
+        
         function removeTransition(e) {
             if(e.propertyName !== "transform") return;
             this.classList.remove("playing");
-            
         }
-
+        
         const keys = document.querySelectorAll(".key");
         keys.forEach( key => key.addEventListener("transitionend", removeTransition));
+        window.addEventListener("keydown", playSound);
     </script>
 </body>
-
-
-
 </html>
-
-<!-- https://www.toptal.com/developers/keycode/for/l -->
