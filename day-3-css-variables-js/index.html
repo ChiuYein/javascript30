@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variables with JS</title>
+</head>
+<body>
+    <h2>Playing CSS Variables with <span class="headline">JS</span></h2>
+    <div class="controls">
+        <label for="">Spacing</label>
+        <input id="spacing" type="range" name="spacing" value="10" min="1" max="250" data-sizing="px">
+        <label for="">Blur</label>
+        <input id="blue" type="range" name="blue" value="10" min="0" max="250" data-sizing="px">
+        <label for="">Base Color</label>
+        <input id="base" type="color" name="base" value="#BADA55">
+    </div>
+    <img src="/drum-kit.png">
+</body>
+
+<style>
+    /* CSS Variables */
+    :root {
+        --spacing: 10px;
+        --blur: 10px;
+        --base: #BADA55;
+    }
+
+
+    /* preset CSS */
+    body {
+        text-align: center;
+        font-weight: 150;
+    }
+
+    .controls {
+        margin-bottom: 50px;
+    }
+
+    input {
+        width: 100px;
+    }
+
+    img {
+        max-width: 80%;
+        padding: var(--spacing);
+        filter: blur(--blur);
+        background: var(--base);
+    }
+</style>
+</html>
